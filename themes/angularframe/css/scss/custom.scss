@@ -4,136 +4,208 @@
   font-family: "Apple_Chancery";
   src: url(../../fonts/apple-chancery.ttf);
 }
-.ng-isolate-scope{
-  div{
-    div{
-      sgv{
-        border:1px solid red;
-      }
-    }
-  }
+.cb-slideshow, .cb-slideshow:after {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
 }
-.cart-block{
-  border:1px solid;
-  position: absolute;
-
-  right:50px;
-  width:20%;
-  background: #fff;
-  z-index: 99999;
-  .checkoutBtn{
-    height: 20px;
-    width: 20%;
-    display: block!important;
-    border: 1px solid;
-  }
+.cb-slideshow:after {
+  content: '';
+  background: transparent url(../images/1.png) repeat top left;
 }
-@media (max-width:600px) {
-  .cart-block{
-    width:100%;
-    right:0px;
-  }
-}
-@media (min-width:750px) {
-  .cart-block{
-    width:50%;
-    right:20px;
-  }
-}
-.jumbotron{
-  .page-header{
-    border: 2px double $color-green-dark;
-    font-family: "Apple_Chancery";
-    text-align: center;
-    color: $color-dark-red;
-    padding-bottom: 3px;
-  }
-  .productBox{
-    border: 6px solid $color-light-pink;
-    background:$color-green-dark;
-    margin: 0;
-    padding-bottom: 3px;
-    .productImage{
+.cb-slideshow{
+  li{
+    list-style: none;
+    span {
       width: 100%;
-      display: block;
-      img {
-        width: 100% !important;
-        display: block;
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      color: transparent;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      opacity: 0;
+      z-index: 0;
+      -webkit-backface-visibility: hidden;
+      -webkit-animation: imageAnimation 36s linear infinite 0s;
+      -moz-animation: imageAnimation 36s linear infinite 0s;
+      -o-animation: imageAnimation 36s linear infinite 0s;
+      -ms-animation: imageAnimation 36s linear infinite 0s;
+      animation: imageAnimation 36s linear infinite 0s;
+    }
+    div {
+      z-index: 1000;
+      position: absolute;
+      bottom: 30px;
+      left: 0px;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      -webkit-animation: titleAnimation 36s linear infinite 0s;
+      -moz-animation: titleAnimation 36s linear infinite 0s;
+      -o-animation: titleAnimation 36s linear infinite 0s;
+      -ms-animation: titleAnimation 36s linear infinite 0s;
+      animation: titleAnimation 36s linear infinite 0s;
+      h4 {
+        font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+        font-size: 100px;
+        padding: 0;
+        line-height: 200px;
+        color: rgba(255,255,255, 0.8);
+        text-shadow: rgb(3, 3, 3) 4px 4px 4px;
       }
     }
-    .productTitle{
-      border: 2px outset;
-      padding-top: 3px;
-      padding-bottom: 3px;
-      background: $color-white;
-      font-family: "Apple_Chancery";
-      text-align: center;
-      font-size: larger;
-      font-weight: bold;
-      margin: 20px 0 10px 0;
-    }
-    .productDescription{
-      border: 2px outset;
-      padding-top: 3px;
-      padding-bottom: 3px;
-      background: $color-white;
-      font-family: "Apple_Chancery";
-      text-align: center;
-      font-size: larger;
-      font-weight: bold;
-      margin: 20px 0 10px 0;
-    }
-    .productPrice{
-      padding-top: 3px;
-      padding-bottom: 3px;
-      background: $color-white;
-      font-family: "Apple_Chancery";
-      text-align: center;
-      font-size: larger;
-      font-weight: bold;
-      margin: 20px 0 10px 0;
-    }
-    .productDiscountprice{
-      padding-top: 3px;
-      padding-bottom: 3px;
-      background: $color-white;
-      font-family: "Apple_Chancery";
-      text-align: center;
-      font-size: larger;
-      font-weight: bold;
-      margin: 20px 0 10px 0;
-    }
-    .arc-top:before, .arc-top:after, .arc-bottom:before, .arc-bottom:after {
-      content:'';
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      background-color: #fff;
-      border-radius: 50%;
-    }
-    .arc-top:before {
-      top: -12px;
-      left: -12px;
-    }
-    .arc-top:after {
-      top: -12px;
-      right: -12px;
-    }
-    .arc-bottom:before {
-      bottom: -12px;
-      left: -12px;
-    }
-    .arc-bottom:after {
-      bottom: -12px;
-      right: -12px;
+  }
+  li:nth-child(1){
+    span { background-image: url('../images/1.jpg') }
+  }
+  li:nth-child(2){
+    span {
+      background-image: url(../images/2.jpg);
+      -webkit-animation-delay: 6s;
+      -moz-animation-delay: 6s;
+      -o-animation-delay: 6s;
+      -ms-animation-delay: 6s;
+      animation-delay: 6s;
     }
   }
+  li:nth-child(3){
+    span {
+      background-image: url(../images/3.jpg);
+      -webkit-animation-delay: 12s;
+      -moz-animation-delay: 12s;
+      -o-animation-delay: 12s;
+      -ms-animation-delay: 12s;
+      animation-delay: 12s;
+    }
+  }
+  li:nth-child(4){
+    span {
+      background-image: url(../images/4.jpg);
+      -webkit-animation-delay: 18s;
+      -moz-animation-delay: 18s;
+      -o-animation-delay: 18s;
+      -ms-animation-delay: 18s;
+      animation-delay: 18s;
+    }
+  }
+  li:nth-child(5){
+    span {
+      background-image: url(../images/5.jpg);
+      -webkit-animation-delay: 24s;
+      -moz-animation-delay: 24s;
+      -o-animation-delay: 24s;
+      -ms-animation-delay: 24s;
+      animation-delay: 24s;
+    }
+  }
+  li:nth-child(6){
+    span {
+      background-image: url(../images6.jpg);
+      -webkit-animation-delay: 30s;
+      -moz-animation-delay: 30s;
+      -o-animation-delay: 30s;
+      -ms-animation-delay: 30s;
+      animation-delay: 30s;
+    }
+  }
+  li:nth-child(2){
+    div {
+      -webkit-animation-delay: 6s;
+      -moz-animation-delay: 6s;
+      -o-animation-delay: 6s;
+      -ms-animation-delay: 6s;
+      animation-delay: 6s;
+    }
+  }
+  li:nth-child(3){
+    div {
+      -webkit-animation-delay: 12s;
+      -moz-animation-delay: 12s;
+      -o-animation-delay: 12s;
+      -ms-animation-delay: 12s;
+      animation-delay: 12s;
+    }
+  }
+  li:nth-child(4) {
+    div {
+      -webkit-animation-delay: 18s;
+      -moz-animation-delay: 18s;
+      -o-animation-delay: 18s;
+      -ms-animation-delay: 18s;
+      animation-delay: 18s;
+    }
+  }
+  li:nth-child(5){
+    div {
+      -webkit-animation-delay: 24s;
+      -moz-animation-delay: 24s;
+      -o-animation-delay: 24s;
+      -ms-animation-delay: 24s;
+      animation-delay: 24s;
+    }
+  }
+  li:nth-child(6) {
+    div {
+      -webkit-animation-delay: 30s;
+      -moz-animation-delay: 30s;
+      -o-animation-delay: 30s;
+      -ms-animation-delay: 30s;
+      animation-delay: 30s;
+    }
+  }
+
 }
-@media (max-width:350px) {
-  .jumbotron {
-    .productBox {
-      width:100%;
-      display: block;
+
+@mixin stagger-anim-delay($i, $initial-delay, $stagger-delay) {
+  @while $i > 0 {
+    &:nth-of-type(#{$i}) {
+      animation-delay: $initial-delay + $stagger-delay * $i;
+    }
+    $i: $i - 1;
+  }
+}
+.lines {
+  height: 90%;
+  .line {
+    list-style: none;
+    height: inherit;
+    width: 2px;
+    position: absolute;
+    background: rgba(#eee, 0.6);
+    &.l--0 {
+      left: 0;
+    }
+    &.l--25 {
+      left: 25%;
+    }
+    &.l--50 {
+      left: 50%;
+    }
+    &.l--75 {
+      left: 75%;
+    }
+    &.l--100 {
+      left: calc(100% - 1px);
+    }
+  }
+  .line__label {
+    display: block;
+    width: 100px;
+    text-align: center;
+    background: $color-white;
+    font-weight: bold;
+    position: absolute;
+    bottom: -20px;
+    right: -50px;
+    &.title {
+      text-transform: uppercase;
+      font-weight: bold;
     }
   }
 }

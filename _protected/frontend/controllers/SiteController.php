@@ -87,12 +87,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $model = new Stockitems();
 
 
-        return $this->render('index',[
-        'model' => json_encode(Stockitems::find()->all())
-        ]);
+
+        return $this->render('index');
     }
 
     /**
