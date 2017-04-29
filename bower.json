@@ -1,0 +1,13 @@
+{
+  "name": "app",
+  "authors": [
+    "'Robert <r.mill@ntlworld.com>"
+  ],
+  "description": "",
+  "main": "app.js",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "ngCart": "ngcart#^1.0.0"
+  }
+}
